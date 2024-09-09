@@ -1,4 +1,4 @@
-from flask import Flask, redirect, url_for
+from flask import Flask, redirect, url_for, render_template
 
 app = Flask(__name__)
 
@@ -9,7 +9,7 @@ def welcome():
 # Build URL dynamically
 @app.route('/success/<int:score>')
 def success(score):
-    return "<html><body></body><h1>The result is passed</h1></html>"
+    return render_template('index.html')
 
 @app.route('/fail/<int:score>')
 def fail(score):
